@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * PHP library for string handler.
  * 
@@ -8,9 +8,9 @@
  * @author     maxgamurar - https://github.com/maxgamurar
  * @copyright  Copyright (c) 2017 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-Str
- * @since      File available since 1.0.0 - Update: 2017-01-17
+ * @since      File available since 1.0.0 - Update: 2017-01-30
  */
 
 namespace Josantonius\Str;
@@ -34,7 +34,7 @@ class Str {
      *
      * @return bool
      */                                              
-    public static function startsWith(string $search, string $string): bool {
+    public static function startsWith($search, $string) {
 
         $length = strlen($search);
 
@@ -51,7 +51,7 @@ class Str {
      *
      * @return bool
      */
-    public static function endsWith(string $search, string $string): bool {
+    public static function endsWith($search, $string) {
 
         $length = strlen($search);
 
@@ -75,7 +75,7 @@ class Str {
      *
      * @return string
      */
-    public static function trimStart(string $search, string $string): string {
+    public static function trimStart($search, $string) {
         
         if (substr($string, 0, strlen($search)) == $search) {
 
@@ -95,7 +95,7 @@ class Str {
      *
      * @return string
      */
-    public static function trimEnd(string $search, string $string): string {
+    public static function trimEnd($search, $string) {
 
         if (substr($string, (strlen($search) * -1)) == $search) {
 
