@@ -11,8 +11,6 @@
 
 namespace Josantonius\Str;
 
-# use Josantonius\Str\Exception\StrException;
-
 /**
  * String handler.
  *
