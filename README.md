@@ -24,7 +24,7 @@ PHP library for string handler.
 <p align="center"><strong>Take a look at the code</strong></p>
 
 <p align="center">
-  <a href="" title="Take a look at the code">
+  <a href="https://youtu.be/Wm0i0466GAQ" title="Take a look at the code">
   	<img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>

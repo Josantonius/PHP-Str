@@ -4,7 +4,7 @@
 
 [Spanish version](README-ES.md)
 
-Librería PHP para manejo de strings.
+Biblioteca PHP para manejo de strings.
 
 ---
 
@@ -24,7 +24,7 @@ Librería PHP para manejo de strings.
 <p align="center"><strong>Echa un vistazo al código</strong></p>
 
 <p align="center">
-  <a href="" title="Echa un vistazo al código">
+  <a href="https://youtu.be/Wm0i0466GAQ" title="Echa un vistazo al código">
   	<img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>
@@ -53,7 +53,7 @@ Esta biblioteca es soportada por versiones de PHP 5.6 o superiores y es compatib
 
 ### Cómo empezar y ejemplos
 
-Para utilizar esta librería, simplemente:
+Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -62,7 +62,7 @@ use Josantonius\Str\Str;
 ```
 ### Métodos disponibles
 
-Métodos disponibles en esta librería:
+Métodos disponibles en esta biblioteca:
 
 ```php
 Str::startsWith();
@@ -72,7 +72,7 @@ Str::trimEnd();
 ```
 ### Uso
 
-Ejemplo de uso para esta librería:
+Ejemplo de uso para esta biblioteca:
 
 ```php
 <?php
@@ -100,7 +100,7 @@ $loader->addPsr4('Josantonius\\Str\\Tests\\', __DIR__ . '/vendor/josantonius/str
 
 use Josantonius\Str\Tests\StrTest;
 ```
-Métodos de prueba disponibles en esta librería:
+Métodos de prueba disponibles en esta biblioteca:
 
 ```php
 StrTest::testStartsWithTrue();
