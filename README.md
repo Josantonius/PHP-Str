@@ -1,6 +1,6 @@
 # PHP Str library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/str/v/stable)](https://packagist.org/packages/josantonius/str) [![Total Downloads](https://poser.pugx.org/josantonius/str/downloads)](https://packagist.org/packages/josantonius/str) [![Latest Unstable Version](https://poser.pugx.org/josantonius/str/v/unstable)](https://packagist.org/packages/josantonius/str) [![License](https://poser.pugx.org/josantonius/str/license)](https://packagist.org/packages/josantonius/str) [![Travis](https://travis-ci.org/Josantonius/PHP-Str.svg)](https://travis-ci.org/Josantonius/PHP-Str)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/Str/v/stable)](https://packagist.org/packages/josantonius/Str) [![Latest Unstable Version](https://poser.pugx.org/josantonius/Str/v/unstable)](https://packagist.org/packages/josantonius/Str) [![License](https://poser.pugx.org/josantonius/Str/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/76e18fe6d1d74138be3e5bb76daf6127)](https://www.codacy.com/app/Josantonius/PHP-Str?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-Str&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/Str/downloads)](https://packagist.org/packages/josantonius/Str) [![Travis](https://travis-ci.org/Josantonius/PHP-Str.svg)](https://travis-ci.org/Josantonius/PHP-Str) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-Str/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-Str)
 
 [Spanish version](README-ES.md)
 
@@ -8,10 +8,10 @@ PHP library for string handler.
 
 ---
 
-- [Installation](#installation)
 - [Requirements](#requirements)
-- [Quick Start and Examples](#quick-start-and-examples)
+- [Installation](#installation)
 - [Available Methods](#available-methods)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Tests](#tests)
 - [TODO](#-todo)
@@ -22,76 +22,122 @@ PHP library for string handler.
 
 ---
 
-### Installation
+## Requirements
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
 
-To install PHP Str library, simply:
+## Installation
+
+The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
+
+To install **PHP Str library**, simply:
 
     $ composer require Josantonius/Str
 
-The previous command will only install the necessary files, if you prefer to download the entire source code (including tests, vendor folder, exceptions not used, docs...) you can use:
+The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
     $ composer require Josantonius/Str --prefer-source
 
-Or you can also clone the complete repository with Git:
+You can also **clone the complete repository** with Git:
 
-	$ git clone https://github.com/Josantonius/PHP-Str.git
+  $ git clone https://github.com/Josantonius/PHP-Str.git
 
-### Requirements
+Or **install it manually**:
 
-This library is supported by PHP versions 5.6 or higher and is compatible with HHVM versions 3.0 or higher.
+[Download Str.php](https://raw.githubusercontent.com/Josantonius/PHP-Str/master/src/Str.php):
 
-### Quick Start and Examples
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-Str/master/src/Str.php
 
-To use this class, simply:
+## Available Methods
+
+### - Check if the string starts with a certain value:
+
+```php
+Str::startsWith($search, $string);
+```
+
+| Attribute | Description | Type | Required | Default
+| --- | --- | --- | --- | --- |
+| $search | The string to search. | string | Yes | |
+| $string | The string where search. | string | Yes | |
+
+**# Return** (boolean)
+
+### - Check if the string ends with a certain value:
+
+```php
+Str::endsWith($search, $string);
+```
+
+| Attribute | Description | Type | Required | Default
+| --- | --- | --- | --- | --- |
+| $search | The string to search. | string | Yes | |
+| $string | The string where search. | string | Yes | |
+
+**# Return** (boolean)
+
+## Quick Start
+
+To use this library with **Composer**:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\Str\Str;
 ```
-### Available Methods
 
-Available methods in this library:
+Or If you installed it **manually**, use it:
 
 ```php
-Str::startsWith();
-Str::endsWith();
+require_once __DIR__ . '/Str.php';
+
+use Josantonius\Str\Str;
 ```
-### Usage
+
+## Usage
 
 Example of use for this library:
 
+### - Check if the string starts with a certain value:
+
 ```php
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-use Josantonius\Str\Str;
-
-var_dump(Str::startsWith("Hello", "Hello world")); # bool(true)
-var_dump(Str::startsWith("hello", "Hello world")); # bool(false)
-
-var_dump(Str::endsWith("world", "Hello world"));   # bool(true)
-var_dump(Str::endsWith("World", "Hello world"));   # bool(false)
+Str::startsWith("Hello", "Hello world");
 ```
 
-### Tests 
+### - Check if the string ends with a certain value:
 
-To run [tests](tests/Str/Test) simply:
+```php
+Str::endsWith("world", "Hello World");
+```
+
+## Tests 
+
+To run [tests](tests) you just need [Composer](http://getcomposer.org/download/) and to execute the following:
 
     $ git clone https://github.com/Josantonius/PHP-Str.git
     
     $ cd PHP-Str
 
-    $ phpunit
+    $ composer install
 
-### ☑ TODO
+Run unit tests with [PHPUnit](https://phpunit.de/):
+
+    $ composer phpunit
+
+Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+
+    $ composer phpcs
+
+Run all previous tests:
+
+    $ composer tests
+
+## ☑ TODO
 
 - [x] Create tests
-- [ ] Improve documentation
+- [x] Improve documentation
 
-### Contribute
+## Contribute
 
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
@@ -101,15 +147,15 @@ To run [tests](tests/Str/Test) simply:
 
 This is intended for large and long-lived objects.
 
-### Repository
+## Repository
 
 All files in this repository were created and uploaded automatically with [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### License
+## License
 
 This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
 
-### Copyright
+## Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
