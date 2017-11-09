@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-Str
  * @since     1.1.3
  */
-
 namespace Josantonius\Str;
 
 use PHPUnit\Framework\TestCase;
@@ -21,15 +20,47 @@ use PHPUnit\Framework\TestCase;
 class StrTest extends TestCase
 {
     /**
+     * Str instance.
+     *
+     * @since 1.1.5
+     *
+     * @var object
+     */
+    protected $Str;
+
+    /**
+     * Set up.
+     *
+     * @since 1.1.5
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->Str = new Str;
+    }
+
+    /**
+     * Check if it is an instance of Str.
+     *
+     * @since 1.1.5
+     */
+    public function testIsInstanceOfStr()
+    {
+        $actual = $this->Str;
+        $this->assertInstanceOf('Josantonius\Str\Str', $actual);
+    }
+
+    /**
      * Check if the string starts with a certain value.
      *
      * @since 1.1.3
      *
-     * @return boolean
+     * @return bool
      */
     public function testStartsWithTrue()
     {
-        $this->assertTrue(Str::startsWith("Hello", "Hello world"));
+        $this->assertTrue($this->Str->startsWith('Hello', 'Hello world'));
     }
 
     /**
@@ -37,11 +68,11 @@ class StrTest extends TestCase
      *
      * @since 1.1.3
      *
-     * @return boolean
+     * @return bool
      */
     public function testStartsWithFalse()
     {
-        $this->assertFalse(Str::startsWith("Hello", "hello world"));
+        $this->assertFalse($this->Str->startsWith('Hello', 'hello world'));
     }
 
     /**
@@ -49,11 +80,11 @@ class StrTest extends TestCase
      *
      * @since 1.1.3
      *
-     * @return boolean
+     * @return bool
      */
     public function testEndsWithTrue()
     {
-        $this->assertTrue(Str::endsWith("world", "Hello world"));
+        $this->assertTrue($this->Str->endsWith('world', 'Hello world'));
     }
 
     /**
@@ -61,10 +92,10 @@ class StrTest extends TestCase
      *
      * @since 1.1.3
      *
-     * @return boolean
+     * @return bool
      */
     public function testEndsWithFalse()
     {
-        $this->assertFalse(Str::endsWith("world", "Hello World"));
+        $this->assertFalse($this->Str->endsWith('world', 'Hello World'));
     }
 }

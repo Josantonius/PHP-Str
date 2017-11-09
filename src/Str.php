@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-Str
  * @since     1.0.0
  */
-
 namespace Josantonius\Str;
 
 /**
@@ -26,11 +25,11 @@ class Str
      * @param string $search → the string to search
      * @param string $string → the string where search
      *
-     * @return boolean
+     * @return bool
      */
     public static function startsWith($search, $string)
     {
-        return (substr($string, 0, strlen($search)) === $search);
+        return substr($string, 0, strlen($search)) === $search;
     }
 
     /**
@@ -41,10 +40,10 @@ class Str
      * @param string $search → the string to search
      * @param string $string → the string where search
      *
-     * @return boolean
+     * @return bool
      */
     public static function endsWith($search, $string)
     {
-        return (substr($string, -strlen($search)) == $search);
+        return substr($string, -strlen($search)) == $search;
     }
 }
